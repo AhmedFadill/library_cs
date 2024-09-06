@@ -43,13 +43,18 @@ class _CatogryPageState extends State<CatogryPage> {
                           SizedBox(
                             width: 17,
                           ),
-                          Text(
-                            'Categories',
-                            style: TextStyle(
-                                color: Colors.grey.shade200,
-                                fontFamily: "Urbanist-Regula",
-                                fontSize: 15,
-                                letterSpacing: 1),
+                          InkWell(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text(
+                              'Categories',
+                              style: TextStyle(
+                                  color: Colors.grey.shade200,
+                                  fontFamily: "Urbanist-Regula",
+                                  fontSize: 15,
+                                  letterSpacing: 1),
+                            ),
                           ),
                         ],
                       ),

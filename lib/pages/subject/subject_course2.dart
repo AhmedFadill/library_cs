@@ -47,7 +47,9 @@ class _SubjectCourse2State extends State<SubjectCourse2> {
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => Massge(
-                        docid: "3akXljJMiV9MWpd5k181", course: "course1")));
+                        subject: "",
+                        docid: "3akXljJMiV9MWpd5k181",
+                        course: "course1")));
               },
               child: Container(
                 width: 155,
@@ -88,7 +90,9 @@ class _SubjectCourse2State extends State<SubjectCourse2> {
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => Massge(
-                        docid: "WVf5xwQzPPepAsmuzi4z", course: "course1")));
+                        subject: "",
+                        docid: "WVf5xwQzPPepAsmuzi4z",
+                        course: "course1")));
               },
               child: Container(
                 width: 155,
@@ -134,7 +138,9 @@ class _SubjectCourse2State extends State<SubjectCourse2> {
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => Massge(
-                        docid: "BRdkMJBELTWmvkTzlFBI", course: "course1")));
+                        subject: "",
+                        docid: "BRdkMJBELTWmvkTzlFBI",
+                        course: "course1")));
               },
               child: Container(
                 margin: EdgeInsets.only(top: 20),
@@ -176,7 +182,9 @@ class _SubjectCourse2State extends State<SubjectCourse2> {
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => Massge(
-                        docid: "DehvR3XHysr4kN2Apt6H", course: "course1")));
+                        subject: "",
+                        docid: "DehvR3XHysr4kN2Apt6H",
+                        course: "course1")));
               },
               child: Container(
                 width: 155,
@@ -222,7 +230,9 @@ class _SubjectCourse2State extends State<SubjectCourse2> {
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => Massge(
-                        docid: "FpKXRN5jW1WT21NpPxEG", course: "course1")));
+                        subject: "",
+                        docid: "FpKXRN5jW1WT21NpPxEG",
+                        course: "course1")));
               },
               child: Container(
                 width: 155,
@@ -263,7 +273,9 @@ class _SubjectCourse2State extends State<SubjectCourse2> {
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => Massge(
-                        docid: "N269KHI2LjObLmz1xH0j", course: "course1")));
+                        subject: "",
+                        docid: "N269KHI2LjObLmz1xH0j",
+                        course: "course1")));
               },
               child: Container(
                 margin: EdgeInsets.only(top: 20),

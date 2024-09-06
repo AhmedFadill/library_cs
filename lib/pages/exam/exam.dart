@@ -45,70 +45,71 @@ class _ExamsState extends State<Exams> {
       itemCount: exams.length,
       itemBuilder: (context, index) {
         return Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
+          margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+          padding: const EdgeInsets.all(3),
+          height: 110,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
               boxShadow: [
-                BoxShadow(
-                    color: Colors.black,
-                    blurRadius: 1,
-                    blurStyle: BlurStyle.outer,
-                    offset: Offset.fromDirection(2))
-              ],
-              color: Colors.grey.shade50,
-            ),
-            margin: EdgeInsets.all(10),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    alignment: Alignment.centerRight,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          exams[index]["title"],
-                          textDirection: TextDirection.rtl,
-                          style: TextStyle(
-                              fontSize: 18, fontFamily: "Tajawal-Bold"),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          "المادة : ${exams[index]["supTitle"]}",
-                          textDirection: TextDirection.rtl,
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontFamily: "Tajawal-Regular",
-                              color: Colors.grey.shade500),
-                        ),
-                        Text(
-                          "الموعد : ${exams[index]["date"]}",
-                          textDirection: TextDirection.rtl,
-                          style: TextStyle(
-                              fontSize: 15,
-                              fontFamily: "Tajawal-Regular",
-                              color: Colors.grey.shade500),
-                        ),
-                      ],
+                BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 1)
+              ]),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      exams[index]["name"],
+                      style:
+                          TextStyle(fontSize: 15, fontFamily: "Urbanist-Bold"),
+                      textDirection: TextDirection.rtl,
+                      textAlign: TextAlign.right,
                     ),
-                  ),
+                    Text(
+                      exams[index]["title"],
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontFamily: "Tajawal-Bold",
+                          color: Colors.grey.shade600),
+                      textDirection: TextDirection.rtl,
+                      textAlign: TextAlign.right,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text(
+                      "الموعد : ${exams[index]["date"]}",
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontFamily: "Tajawal-Bold",
+                          color: Colors.grey.shade600),
+                      textDirection: TextDirection.rtl,
+                      textAlign: TextAlign.right,
+                    )
+                  ],
                 ),
-                SizedBox(
-                  width: 20,
-                ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
                   child: Image.asset(
                     "images/3d-clipboard-pencil-on-purple-600nw-2200665385.webp",
-                    height: 100,
                     width: 100,
-                    alignment: Alignment.center,
+                    height: 100,
                     fit: BoxFit.cover,
                   ),
-                )
-              ],
-            ));
+                ),
+              ),
+            ],
+          ),
+        );
       },
     );
   }

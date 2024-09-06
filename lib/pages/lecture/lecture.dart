@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:library_cs/massges/ofSubject/layout.dart';
 
 class Lecture extends StatefulWidget {
-  const Lecture({super.key});
+  final String docid;
+  final String course;
+  final String subject;
+  const Lecture({super.key, required this.docid, required this.course, required this.subject});
 
   @override
   State<Lecture> createState() => _LectureState();
@@ -72,7 +76,14 @@ class _LectureState extends State<Lecture> {
                             ),
                           ),
                           IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => Layout(
+                                      subject: widget.subject,
+                                        type: "Lectures",
+                                        docid: widget.docid,
+                                        course: widget.course)));
+                              },
                               icon: Icon(
                                 Icons.arrow_circle_right_outlined,
                               ))
@@ -143,7 +154,14 @@ class _LectureState extends State<Lecture> {
                             ),
                           ),
                           IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => Layout(
+                                      subject: widget.subject,
+                                        type: "Exams",
+                                        docid: widget.docid,
+                                        course: widget.course)));
+                              },
                               icon: Icon(
                                 Icons.arrow_circle_right_outlined,
                               ))
@@ -214,7 +232,14 @@ class _LectureState extends State<Lecture> {
                             ),
                           ),
                           IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => Layout(
+                                      subject: widget.subject,
+                                        type: "Summaries",
+                                        docid: widget.docid,
+                                        course: widget.course)));
+                              },
                               icon: Icon(
                                 Icons.arrow_circle_right_outlined,
                               ))

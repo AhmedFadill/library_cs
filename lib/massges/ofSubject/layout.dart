@@ -1,24 +1,29 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:library_cs/massges/m.dart';
+import 'package:library_cs/massges/ofSubject/ex.dart';
+import 'package:library_cs/massges/ofSubject/lec.dart';
+import 'package:library_cs/massges/ofSubject/summar.dart';
 import 'package:library_cs/pages/lecture/lecture.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Massge extends StatefulWidget {
+class Layout extends StatefulWidget {
   final String docid;
   final String course;
+  final String type;
   final String subject;
-  const Massge(
+  const Layout(
       {super.key,
       required this.docid,
       required this.course,
+      required this.type,
       required this.subject});
 
   @override
-  State<Massge> createState() => _MassgeState();
+  State<Layout> createState() => _LayoutState();
 }
 
-class _MassgeState extends State<Massge> {
+class _LayoutState extends State<Layout> {
   double hight_cont = 120;
 
   @override
@@ -34,7 +39,7 @@ class _MassgeState extends State<Massge> {
                 Container(
                     width: double.infinity,
                     child: Image.asset(
-                      "images/back.png",
+                      "images/istockphoto.jpg",
                       fit: BoxFit.fitWidth,
                     )),
                 Positioned(
@@ -373,6 +378,11 @@ class _MassgeState extends State<Massge> {
                                 color: Colors.white,
                                 fontFamily: "Urbanist-Medium",
                                 fontSize: 32)),
+                        Text(widget.type,
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "Urbanist-Medium",
+                                fontSize: 18)),
                       ],
                     ),
                   ),
@@ -388,15 +398,9 @@ class _MassgeState extends State<Massge> {
                       topRight: Radius.circular(25),
                     )),
                 child: Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(13.0),
                   child: Column(
                     children: [
-                      Text(
-                          "The messages are linked to the Telegram channel. You can easily go to it from here.",
-                          style: TextStyle(
-                              fontFamily: "Urbanist-Regula",
-                              fontSize: 14,
-                              color: Colors.grey.shade600)),
                       // Container(
                       //   decoration: BoxDecoration(
                       //       color: Colors.white,
@@ -476,12 +480,29 @@ class _MassgeState extends State<Massge> {
                       //     ],
                       //   ),
                       // )
+                      Divider(
+                        thickness: 3,
+                        indent: 120,
+                        endIndent: 120,
+                        height: 5,
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
                       Expanded(
-                          child: Lecture(
-                        subject: widget.subject,
-                        course: widget.course,
-                        docid: widget.docid,
-                      )
+                          child: widget.type == "Lectures"
+                              ? LecView(
+                                  course: widget.course,
+                                  docid: widget.docid,
+                                )
+                              : widget.type == "Summaries"
+                                  ? Summaries(
+                                      course: widget.course,
+                                      docid: widget.docid,
+                                    )
+                                  : Exm(
+                                      name: widget.subject,
+                                    )
                           //     M(
                           //   course: widget.course,
                           //   docid: widget.docid,
