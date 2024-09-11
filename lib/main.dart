@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:library_cs/massges/massge.dart';
 import 'package:library_cs/open_screen.dart';
 import 'package:library_cs/pages/catogry_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'package:library_cs/massges/table.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,9 +19,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PoenScreenApp(),
+      home: const PoenScreenApp(),
       routes: {
-        'CatogryPage': (context) => CatogryPage(),
+        'CatogryPage': (context) => const CatogryPage(),
       },
     );
   }

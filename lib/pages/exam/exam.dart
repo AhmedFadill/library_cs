@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:library_cs/massges/m.dart';
 
 class Exams extends StatefulWidget {
   const Exams({super.key});
@@ -28,7 +27,7 @@ class _ExamsState extends State<Exams> {
     //   pathImge = docSnapshot.get('table');
     // }
     // print("-------------- ${pathImge}");
-    // isLoding = false;
+    isLoding = false;
     setState(() {});
   }
 
@@ -41,76 +40,106 @@ class _ExamsState extends State<Exams> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: exams.length,
-      itemBuilder: (context, index) {
-        return Container(
-          margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-          padding: const EdgeInsets.all(3),
-          height: 110,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: [
-                BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 1)
-              ]),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Expanded(
+    return isLoding == true
+        ? Center(
+            child: Image.asset(
+            "images/system-regular-716-spinner-three-dots-hover-trapdoor (1).gif",
+            height: 90,
+          ))
+        : exams.isEmpty
+            ? Center(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      exams[index]["name"],
+                    Image.asset(
+                      "images/nr.gif",
+                      height: 100,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Text(
+                      "there is nothing her yet",
                       style:
-                          TextStyle(fontSize: 15, fontFamily: "Urbanist-Bold"),
-                      textDirection: TextDirection.rtl,
-                      textAlign: TextAlign.right,
-                    ),
-                    Text(
-                      exams[index]["title"],
-                      style: TextStyle(
-                          fontSize: 12,
-                          fontFamily: "Tajawal-Bold",
-                          color: Colors.grey.shade600),
-                      textDirection: TextDirection.rtl,
-                      textAlign: TextAlign.right,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Text(
-                      "الموعد : ${exams[index]["date"]}",
-                      style: TextStyle(
-                          fontSize: 12,
-                          fontFamily: "Tajawal-Bold",
-                          color: Colors.grey.shade600),
-                      textDirection: TextDirection.rtl,
-                      textAlign: TextAlign.right,
+                          TextStyle(fontFamily: "Urbanist-Bold", fontSize: 20),
                     )
                   ],
                 ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Image.asset(
-                    "images/3d-clipboard-pencil-on-purple-600nw-2200665385.webp",
-                    width: 100,
-                    height: 100,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
+              )
+            : ListView.builder(
+                itemCount: exams.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    margin:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                    padding: const EdgeInsets.all(3),
+                    height: 110,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: const [
+                          BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 5,
+                              spreadRadius: 1)
+                        ]),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                exams[index]["name"],
+                                style: const TextStyle(
+                                    fontSize: 15, fontFamily: "Urbanist-Bold"),
+                                textDirection: TextDirection.rtl,
+                                textAlign: TextAlign.right,
+                              ),
+                              Text(
+                                exams[index]["title"],
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: "Tajawal-Bold",
+                                    color: Colors.grey.shade600),
+                                textDirection: TextDirection.rtl,
+                                textAlign: TextAlign.right,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              Text(
+                                "الموعد : ${exams[index]["date"]}",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: "Tajawal-Bold",
+                                    color: Colors.grey.shade600),
+                                textDirection: TextDirection.rtl,
+                                textAlign: TextAlign.right,
+                              )
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Image.asset(
+                              "images/3d-clipboard-pencil-on-purple-600nw-2200665385.webp",
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              );
   }
 }

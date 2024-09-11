@@ -26,7 +26,7 @@ class _LecViewState extends State<LecView> {
         .get();
     sub.addAll(qure.docs);
     isLoding = false;
-    
+
     setState(() {});
   }
 
@@ -40,83 +40,109 @@ class _LecViewState extends State<LecView> {
   @override
   Widget build(BuildContext context) {
     return isLoding == true
-        ? Center(child: CircularProgressIndicator())
+        ? Center(
+            child: Image.asset(
+            "images/system-regular-716-spinner-three-dots-hover-trapdoor (1).gif",
+            height: 90,
+          ))
         : sub.length < 1
             ? Center(
-                child: Text("There is nothing to see here"),
-              )
-            :ListView.builder(
-      itemCount: sub.length,
-      itemBuilder: (context, index) {
-        return Container(
-          margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 5),
-          padding: const EdgeInsets.all(3),
-          height: 110,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: [
-                BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 1)
-              ]),
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Image.asset(
-                    index % 3 == 0
-                        ? img[0]
-                        : index % 3 == 1
-                            ? img[1]
-                            : img[2],
-                    width: 100,
-                    height: 100,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Expanded(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
+                    Image.asset(
+                      "images/nr.gif",
+                      height: 100,
+                    ),
+                    const SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      sub[index]["name"],
+                    const Text(
+                      "there is nothing her yet",
                       style:
                           TextStyle(fontFamily: "Urbanist-Bold", fontSize: 20),
-                    ),
-                    Text(
-                      sub[index]["title"],
-                      style: TextStyle(
-                          fontFamily: "Urbanist-Medium", fontSize: 15),
-                    ),
+                    )
                   ],
                 ),
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              //IconButton(onPressed: () {}, icon: Icon(Icons.remove_red_eye)),
-              IconButton(
-                  onPressed: () async {
-                    if (await canLaunchUrl(
-                        Uri.parse(sub[index]["linkDrive"]))) {
-                      await launchUrl(Uri.parse(sub[index]["linkDrive"]),
-                          mode: LaunchMode.externalApplication);
-                    } else {
-                      throw 'Could not launch ${Uri.parse(sub[index]["linkDrive"])}';
-                    }
-                  },
-                  icon: Icon(Icons.download_for_offline_outlined)),
-            ],
-          ),
-        );
-      },
-    );
+              )
+            : ListView.builder(
+                itemCount: sub.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    margin:
+                        const EdgeInsets.symmetric(vertical: 8, horizontal: 5),
+                    padding: const EdgeInsets.all(3),
+                    height: 110,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: const [
+                          BoxShadow(
+                              color: Color.fromARGB(31, 0, 0, 0),
+                              blurRadius: 5,
+                              spreadRadius: 1)
+                        ]),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Image.asset(
+                              index % 3 == 0
+                                  ? img[0]
+                                  : index % 3 == 1
+                                      ? img[1]
+                                      : img[2],
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Expanded(
+                          child: Column(
+                            children: [
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Text(
+                                sub[index]["name"],
+                                style: const TextStyle(
+                                    fontFamily: "Urbanist-Bold", fontSize: 20),
+                              ),
+                              Text(
+                                sub[index]["title"],
+                                style: const TextStyle(
+                                    fontFamily: "Urbanist-Medium",
+                                    fontSize: 15),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 30,
+                        ),
+                        //IconButton(onPressed: () {}, icon: Icon(Icons.remove_red_eye)),
+                        IconButton(
+                            onPressed: () async {
+                              if (await canLaunchUrl(
+                                  Uri.parse(sub[index]["linkDrive"]))) {
+                                await launchUrl(
+                                    Uri.parse(sub[index]["linkDrive"]),
+                                    mode: LaunchMode.externalApplication);
+                              } else {
+                                throw 'Could not launch ${Uri.parse(sub[index]["linkDrive"])}';
+                              }
+                            },
+                            icon: const Icon(Icons.download_for_offline_outlined)),
+                      ],
+                    ),
+                  );
+                },
+              );
   }
 }

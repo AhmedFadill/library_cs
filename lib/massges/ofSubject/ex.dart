@@ -37,10 +37,30 @@ class _ExmState extends State<Exm> {
   @override
   Widget build(BuildContext context) {
     return isLoding == true
-        ? Center(child: CircularProgressIndicator())
-        : data.length < 1
+        ? Center(
+            child: Image.asset(
+            "images/system-regular-716-spinner-three-dots-hover-trapdoor (1).gif",
+            height: 90,
+          ))
+        : data.isEmpty
             ? Center(
-                child: Text("There is nothing to see here"),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "images/nr.gif",
+                      height: 100,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Text(
+                      "there is nothing her yet",
+                      style:
+                          TextStyle(fontFamily: "Urbanist-Bold", fontSize: 20),
+                    )
+                  ],
+                ),
               )
             : ListView.builder(
                 itemCount: data.length,
@@ -53,7 +73,7 @@ class _ExmState extends State<Exm> {
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                               color: Colors.black12,
                               blurRadius: 5,
@@ -69,7 +89,7 @@ class _ExmState extends State<Exm> {
                             children: [
                               Text(
                                 data[index]["name"],
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 15, fontFamily: "Urbanist-Bold"),
                                 textDirection: TextDirection.rtl,
                                 textAlign: TextAlign.right,
@@ -97,7 +117,7 @@ class _ExmState extends State<Exm> {
                             ],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Padding(

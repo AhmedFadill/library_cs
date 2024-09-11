@@ -37,10 +37,29 @@ class _SummariesState extends State<Summaries> {
   @override
   Widget build(BuildContext context) {
     return isLoding == true
-        ? Center(child: CircularProgressIndicator())
-        : sub.length < 1
+        ? Center(child: Image.asset(
+            "images/system-regular-716-spinner-three-dots-hover-trapdoor (1).gif",
+            height: 90,
+          ))
+        : sub.isEmpty
             ? Center(
-                child: Text("There is nothing to see here"),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "images/nr.gif",
+                      height: 100,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const Text(
+                      "there is nothing her yet",
+                      style:
+                          TextStyle(fontFamily: "Urbanist-Bold", fontSize: 20),
+                    )
+                  ],
+                ),
               )
             : ListView.builder(
                 itemCount: sub.length,
@@ -53,7 +72,7 @@ class _SummariesState extends State<Summaries> {
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                               color: Colors.black12,
                               blurRadius: 5,
@@ -75,12 +94,12 @@ class _SummariesState extends State<Summaries> {
                           child: Container(
                             width: 70,
                             height: 50,
-                            margin: EdgeInsets.only(left: 15),
+                            margin: const EdgeInsets.only(left: 15),
                             decoration: BoxDecoration(
                               color: Colors.grey.shade700,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: Icon(
+                            child: const Icon(
                               Icons.link,
                               color: Colors.white,
                             ),
@@ -95,7 +114,7 @@ class _SummariesState extends State<Summaries> {
                               children: [
                                 Text(
                                   sub[index]["title"],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 14, fontFamily: "Tajawal-Bold"),
                                   textDirection: TextDirection.rtl,
                                   textAlign: TextAlign.right,
@@ -103,7 +122,7 @@ class _SummariesState extends State<Summaries> {
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 6,
                                 ),
                                 Text(

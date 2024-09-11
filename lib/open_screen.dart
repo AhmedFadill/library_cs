@@ -7,7 +7,7 @@ class PoenScreenApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(193, 109, 87, 252),
+        backgroundColor: const Color.fromARGB(193, 109, 87, 252),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -18,10 +18,10 @@ class PoenScreenApp extends StatelessWidget {
                     child: Container(
                       height: 240,
                       width: 120,
-                      margin: EdgeInsets.only(top: 100),
+                      margin: const EdgeInsets.only(top: 100),
                       alignment: Alignment.centerRight,
-                      decoration: BoxDecoration(
-                          color: const Color.fromARGB(20, 255, 255, 255),
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(20, 255, 255, 255),
                           borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(170),
                               bottomLeft: Radius.circular(170))),
@@ -32,17 +32,17 @@ class PoenScreenApp extends StatelessWidget {
                     child: Container(
                       height: 240,
                       width: 120,
-                      margin: EdgeInsets.only(top: 280),
+                      margin: const EdgeInsets.only(top: 280),
                       alignment: Alignment.centerRight,
-                      decoration: BoxDecoration(
-                          color: const Color.fromARGB(20, 255, 255, 255),
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(20, 255, 255, 255),
                           borderRadius: BorderRadius.only(
                               topRight: Radius.circular(170),
                               bottomRight: Radius.circular(170))),
                     ),
                   ),
                   Container(
-                      margin: EdgeInsets.only(top: 37),
+                      margin: const EdgeInsets.only(top: 37),
                       child: Image.asset(
                         "images/open.png",
                         height: 600,
@@ -54,7 +54,7 @@ class PoenScreenApp extends StatelessWidget {
                     child: Container(
                       alignment: Alignment.bottomCenter,
                       height: 380,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(25),
@@ -65,7 +65,7 @@ class PoenScreenApp extends StatelessWidget {
                           Padding(
                               padding: const EdgeInsets.all(18.0),
                               child: RichText(
-                                  text: TextSpan(
+                                  text: const TextSpan(
                                       text: "Let's Begin",
                                       style: TextStyle(
                                           fontSize: 32,
@@ -82,15 +82,15 @@ class PoenScreenApp extends StatelessWidget {
                                                 215, 109, 87, 252))),
                                     TextSpan(text: " Our Skills")
                                   ]))),
-                          Padding(
+                          const Padding(
                             padding:
-                                const EdgeInsets.symmetric(horizontal: 18.0),
+                                EdgeInsets.symmetric(horizontal: 18.0),
                             child: Text(
                               "The program to organize and facilitate the research and study process",
                               style: TextStyle(fontFamily: "Urbanist-Light"),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
                           Row(
@@ -99,7 +99,7 @@ class PoenScreenApp extends StatelessWidget {
                                 flex: 2,
                                 child: Row(
                                   children: [
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     IconButton(
@@ -115,7 +115,7 @@ class PoenScreenApp extends StatelessWidget {
                                             throw 'Could not launch ${Uri.parse("https://t.me/Stage3_CS")}';
                                           }
                                         },
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.telegram,
                                           color:
                                               Color.fromARGB(215, 109, 87, 252),
@@ -150,13 +150,7 @@ class PoenScreenApp extends StatelessWidget {
                                             Navigator.of(context)
                                                 .pushNamed("CatogryPage");
                                           },
-                                          child: Text(
-                                            "Get Started",
-                                            style: TextStyle(
-                                                fontSize: 18,
-                                                fontFamily: "Urbanist-Medium"),
-                                          ),
-                                          style: ButtonStyle(
+                                          style: const ButtonStyle(
                                               backgroundColor: WidgetStatePropertyAll(
                                                   Color.fromARGB(
                                                       215, 109, 87, 252)),
@@ -170,7 +164,13 @@ class PoenScreenApp extends StatelessWidget {
                                               shape: WidgetStatePropertyAll(
                                                   RoundedRectangleBorder(
                                                       borderRadius: BorderRadius.all(
-                                                          Radius.circular(12)))))),
+                                                          Radius.circular(12))))),
+                                          child: const Text(
+                                            "Get Started",
+                                            style: TextStyle(
+                                                fontSize: 18,
+                                                fontFamily: "Urbanist-Medium"),
+                                          )),
                                     ],
                                   ))
                             ],

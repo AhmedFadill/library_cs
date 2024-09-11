@@ -1,10 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:library_cs/massges/m.dart';
+
 import 'package:library_cs/massges/ofSubject/ex.dart';
 import 'package:library_cs/massges/ofSubject/lec.dart';
 import 'package:library_cs/massges/ofSubject/summar.dart';
-import 'package:library_cs/pages/lecture/lecture.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Layout extends StatefulWidget {
@@ -25,6 +23,18 @@ class Layout extends StatefulWidget {
 
 class _LayoutState extends State<Layout> {
   double hight_cont = 120;
+  List<String> images = [
+    "images/istockphoto.jpg",
+    "images/os1.webp",
+    "images/sub.webp",
+    "images/sub2.webp",
+    "images/sub4.webp",
+    "images/sub5.jpg",
+    "images/sub6.jpg",
+    "images/sub7.png",
+    "images/sub3.jpeg",
+    "images/mob.jpg"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -39,12 +49,39 @@ class _LayoutState extends State<Layout> {
                 Container(
                     width: double.infinity,
                     child: Image.asset(
-                      "images/istockphoto.jpg",
+                      widget.subject == "Operating system 1" ||
+                              widget.subject == "Operating Systems 2"
+                          ? images[8]
+                          : widget.subject == "Computing security1" ||
+                                  widget.subject == "Computing Security 2"
+                              ? images[0]
+                              : widget.subject == "Information retrieval" ||
+                                      widget.subject == "Cloud Computing"
+                                  ? images[2]
+                                  : widget.subject == "Computer network 1" ||
+                                          widget.subject ==
+                                              "Computer Networks 2"
+                                      ? images[7]
+                                      : widget.subject ==
+                                              "Digital image processing"
+                                          ? images[5]
+                                          : widget.subject == "English language"
+                                              ? images[6]
+                                              : widget.subject ==
+                                                      "Human - computer interaction"
+                                                  ? images[3]
+                                                  : widget.subject ==
+                                                          "Mobile Computing"
+                                                      ? images[9]
+                                                      : widget.subject ==
+                                                              "Computer Vision"
+                                                          ? images[4]
+                                                          : images[1],
                       fit: BoxFit.fitWidth,
                     )),
                 Positioned(
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         gradient: LinearGradient(
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
@@ -57,55 +94,62 @@ class _LayoutState extends State<Layout> {
                   ),
                 ),
                 Positioned(
-                    top: 30,
+                    top: 18,
                     right: 10,
                     child: IconButton(
                       onPressed: () {
                         showDialog(
                           context: context,
                           builder: (context) {
-                            return Container(
-                                margin: EdgeInsets.symmetric(
-                                    horizontal: 50, vertical: 135),
-                                decoration: BoxDecoration(
-                                    color: Colors.black54,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(8))),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(16.0),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Icon(
-                                            Icons.account_circle_rounded,
-                                            color: Colors.white,
-                                          ),
-                                          SizedBox(
-                                            width: 10,
-                                          ),
-                                          Text(
-                                            "account devloper : ",
-                                            style: TextStyle(
-                                                fontSize: 15,
-                                                decoration: TextDecoration.none,
-                                                color: Colors.white,
-                                                fontFamily: "Urbanist-Regula"),
-                                            textAlign: TextAlign.left,
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
-                                      Container(
+                            return AlertDialog(
+                              alignment: Alignment.center,
+                              backgroundColor: Color.fromARGB(233, 30, 30, 30),
+                              content: SizedBox(
+                                height: 450,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Row(
+                                      children: [
+                                        Icon(
+                                          Icons.account_circle_rounded,
+                                          color: Colors.white,
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Text(
+                                          "Developer Accounts : ",
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              decoration: TextDecoration.none,
+                                              color: Colors.white,
+                                              fontFamily: "Urbanist-Regula"),
+                                          textAlign: TextAlign.left,
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    InkWell(
+                                      onTap: () async {
+                                        if (await canLaunchUrl(
+                                            Uri.parse("https://t.me/AH_MDW"))) {
+                                          await launchUrl(
+                                              Uri.parse("https://t.me/AH_MDW"),
+                                              mode: LaunchMode
+                                                  .externalApplication);
+                                        } else {
+                                          throw 'Could not launch ${Uri.parse("https://t.me/AH_MDW")}';
+                                        }
+                                      },
+                                      child: Container(
                                         color: Colors.black26,
-                                        padding: EdgeInsets.symmetric(
+                                        padding: const EdgeInsets.symmetric(
                                             horizontal: 5, vertical: 10),
-                                        child: Row(
+                                        child: const Row(
                                           children: [
                                             SizedBox(
                                               width: 20,
@@ -135,26 +179,40 @@ class _LayoutState extends State<Layout> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Container(
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    InkWell(
+                                      onTap: () async {
+                                        if (await canLaunchUrl(Uri.parse(
+                                            "https://www.instagram.com/mk._sm?igsh=NXJndXhoc2NreHoz"))) {
+                                          await launchUrl(
+                                              Uri.parse(
+                                                  "https://www.instagram.com/mk._sm?igsh=NXJndXhoc2NreHoz"),
+                                              mode: LaunchMode
+                                                  .externalApplication);
+                                        } else {
+                                          throw 'Could not launch ${Uri.parse("https://www.instagram.com/mk._sm?igsh=NXJndXhoc2NreHoz")}';
+                                        }
+                                      },
+                                      child: Container(
                                         color: Colors.black26,
-                                        padding: EdgeInsets.symmetric(
+                                        padding: const EdgeInsets.symmetric(
                                             horizontal: 5, vertical: 10),
                                         child: Row(
                                           children: [
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 20,
                                             ),
                                             Image.asset(
                                               "images/insta.png",
                                               height: 23,
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 15,
                                             ),
-                                            Text(
+                                            const Text(
                                               "Instagram Account .",
                                               style: TextStyle(
                                                   fontSize: 15,
@@ -172,26 +230,40 @@ class _LayoutState extends State<Layout> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
-                                      Text(
-                                        "account chanles : ",
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            decoration: TextDecoration.none,
-                                            color: Colors.white,
-                                            fontFamily: "Urbanist-Regula"),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
-                                      Container(
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    const Text(
+                                      "Channel account : ",
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          decoration: TextDecoration.none,
+                                          color: Colors.white,
+                                          fontFamily: "Urbanist-Regula"),
+                                      textAlign: TextAlign.left,
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    InkWell(
+                                      onTap: () async {
+                                        if (await canLaunchUrl(Uri.parse(
+                                            "https://t.me/CS_Stage2"))) {
+                                          await launchUrl(
+                                              Uri.parse(
+                                                  "https://t.me/CS_Stage2"),
+                                              mode: LaunchMode
+                                                  .externalApplication);
+                                        } else {
+                                          throw 'Could not launch ${Uri.parse("https://t.me/CS_Stage2")}';
+                                        }
+                                      },
+                                      child: Container(
                                         color: Colors.black26,
-                                        padding: EdgeInsets.symmetric(
+                                        padding: const EdgeInsets.symmetric(
                                             horizontal: 5, vertical: 10),
-                                        child: Row(
+                                        child: const Row(
                                           children: [
                                             SizedBox(
                                               width: 20,
@@ -221,14 +293,28 @@ class _LayoutState extends State<Layout> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Container(
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    InkWell(
+                                      onTap: () async {
+                                        if (await canLaunchUrl(Uri.parse(
+                                            "https://t.me/Stage3_CS"))) {
+                                          await launchUrl(
+                                              Uri.parse(
+                                                  "https://t.me/Stage3_CS"),
+                                              mode: LaunchMode
+                                                  .externalApplication);
+                                        } else {
+                                          throw 'Could not launch ${Uri.parse("https://t.me/Stage3_CS")}';
+                                        }
+                                      },
+                                      child: Container(
                                         color: Colors.black26,
-                                        padding: EdgeInsets.symmetric(
+                                        padding: const EdgeInsets.symmetric(
                                             horizontal: 5, vertical: 10),
-                                        child: Row(
+                                        child: const Row(
                                           children: [
                                             SizedBox(
                                               width: 20,
@@ -258,14 +344,28 @@ class _LayoutState extends State<Layout> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Container(
+                                    ),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    InkWell(
+                                      onTap: () async {
+                                        if (await canLaunchUrl(Uri.parse(
+                                            "https://t.me/Stage4_CS"))) {
+                                          await launchUrl(
+                                              Uri.parse(
+                                                  "https://t.me/Stage4_CS"),
+                                              mode: LaunchMode
+                                                  .externalApplication);
+                                        } else {
+                                          throw 'Could not launch ${Uri.parse("https://t.me/Stage4_CS")}';
+                                        }
+                                      },
+                                      child: Container(
                                         color: Colors.black26,
-                                        padding: EdgeInsets.symmetric(
+                                        padding: const EdgeInsets.symmetric(
                                             horizontal: 5, vertical: 10),
-                                        child: Row(
+                                        child: const Row(
                                           children: [
                                             SizedBox(
                                               width: 20,
@@ -295,39 +395,41 @@ class _LayoutState extends State<Layout> {
                                           ],
                                         ),
                                       ),
-                                      SizedBox(
-                                        height: 20,
-                                      ),
-                                      Container(
-                                        alignment: Alignment.centerRight,
-                                        child: TextButton(
-                                            onPressed: () {
-                                              Navigator.pop(context);
-                                            },
-                                            style: ButtonStyle(
-                                                backgroundColor:
-                                                    WidgetStatePropertyAll(
-                                                        Colors.black),
-                                                shape: WidgetStatePropertyAll(
-                                                    RoundedRectangleBorder(
-                                                        borderRadius:
-                                                            BorderRadius.all(
-                                                                Radius.circular(
-                                                                    5))))),
-                                            child: Text(
-                                              "Close",
-                                              style: TextStyle(
-                                                  fontFamily: "Urbanist-Regula",
-                                                  color: Colors.white),
-                                            )),
-                                      )
-                                    ],
-                                  ),
-                                ));
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    Container(
+                                      alignment: Alignment.centerRight,
+                                      child: TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          style: const ButtonStyle(
+                                              backgroundColor:
+                                                  WidgetStatePropertyAll(
+                                                      Colors.black),
+                                              shape: WidgetStatePropertyAll(
+                                                  RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.all(
+                                                              Radius.circular(
+                                                                  5))))),
+                                          child: const Text(
+                                            "Close",
+                                            style: TextStyle(
+                                                fontFamily: "Urbanist-Regula",
+                                                color: Colors.white),
+                                          )),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            );
                           },
                         );
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.info_outline,
                         color: Colors.white,
                         size: 37,
@@ -336,7 +438,7 @@ class _LayoutState extends State<Layout> {
                 Container(
                   child: Padding(
                     padding:
-                        const EdgeInsets.only(top: 45, right: 20, left: 20),
+                        const EdgeInsets.only(top: 30, right: 20, left: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -346,13 +448,13 @@ class _LayoutState extends State<Layout> {
                               onTap: () {
                                 Navigator.pop(context);
                               },
-                              child: Icon(
+                              child: const Icon(
                                 Icons.arrow_back_ios_rounded,
                                 color: Colors.white,
                                 size: 18,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 17,
                             ),
                             InkWell(
@@ -370,16 +472,18 @@ class _LayoutState extends State<Layout> {
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 25,
+                        const SizedBox(
+                          height: 45,
                         ),
-                        Text(widget.subject,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 32)),
+                        FittedBox(
+                          child: Text(widget.subject,
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 32)),
+                        ),
                         Text(widget.type,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.white,
                                 fontFamily: "Urbanist-Medium",
                                 fontSize: 18)),
@@ -393,7 +497,7 @@ class _LayoutState extends State<Layout> {
               child: Container(
                 decoration: BoxDecoration(
                     color: Colors.grey.shade100,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(25),
                       topRight: Radius.circular(25),
                     )),
@@ -480,13 +584,13 @@ class _LayoutState extends State<Layout> {
                       //     ],
                       //   ),
                       // )
-                      Divider(
+                      const Divider(
                         thickness: 3,
                         indent: 120,
                         endIndent: 120,
                         height: 5,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Expanded(

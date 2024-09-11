@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:library_cs/massges/massge.dart';
 import 'package:library_cs/massges/table.dart';
@@ -49,7 +48,7 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
             InkWell(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Massge(
+                    builder: (context) => const Massge(
                         subject: "Operating system 1",
                         docid: "3akXljJMiV9MWpd5k181",
                         course: "course1")));
@@ -66,11 +65,11 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                     height: 205,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Color(0xfffdd6d9)),
+                        color: const Color(0xfffdd6d9)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Oprating system 1",
+                        const Text("Oprating system 1",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: "Urbanist-Medium",
@@ -89,11 +88,11 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                 ),
               ),
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             InkWell(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Massge(
+                    builder: (context) => const Massge(
                         subject: "Computing security1",
                         docid: "WVf5xwQzPPepAsmuzi4z",
                         course: "course1")));
@@ -110,7 +109,7 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                     height: 165,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Color(0xffd7fcf1)),
+                        color: const Color(0xffd7fcf1)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -118,7 +117,7 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                           "images/2.png",
                           height: 80,
                         ),
-                        Text("security 1",
+                        const Text("security 1",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: "Urbanist-Medium",
@@ -142,13 +141,13 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
             InkWell(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Massge(
+                    builder: (context) => const Massge(
                         subject: "Information retrieval",
                         docid: "BRdkMJBELTWmvkTzlFBI",
                         course: "course1")));
               },
               child: Container(
-                margin: EdgeInsets.only(top: 20),
+                margin: const EdgeInsets.only(top: 20),
                 width: 155,
                 height: 180,
                 decoration: BoxDecoration(
@@ -160,7 +159,7 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                     height: 165,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Color(0xff8cc4ff)),
+                        color: const Color(0xff8cc4ff)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -168,7 +167,7 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                           "images/3.png",
                           height: 80,
                         ),
-                        Text("Information",
+                        const Text("Information",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: "Urbanist-Medium",
@@ -183,11 +182,11 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                 ),
               ),
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             InkWell(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Massge(
+                    builder: (context) => const Massge(
                         subject: "Computer network 1",
                         docid: "DehvR3XHysr4kN2Apt6H",
                         course: "course1")));
@@ -204,11 +203,11 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                     height: 205,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Color(0xfffdada3)),
+                        color: const Color(0xfffdada3)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Network 1",
+                        const Text("Network 1",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: "Urbanist-Medium",
@@ -236,7 +235,7 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
             InkWell(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Massge(
+                    builder: (context) => const Massge(
                         subject: "Digital image processing",
                         docid: "FpKXRN5jW1WT21NpPxEG",
                         course: "course1")));
@@ -253,11 +252,11 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                     height: 205,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Color.fromARGB(255, 250, 232, 133)),
+                        color: const Color.fromARGB(255, 250, 232, 133)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Image processing",
+                        const Text("Image processing",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: "Urbanist-Medium",
@@ -276,17 +275,17 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                 ),
               ),
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             InkWell(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Massge(
+                    builder: (context) => const Massge(
                         subject: "English language",
                         docid: "N269KHI2LjObLmz1xH0j",
                         course: "course1")));
               },
               child: Container(
-                margin: EdgeInsets.only(top: 20),
+                margin: const EdgeInsets.only(top: 20),
                 width: 155,
                 height: 180,
                 decoration: BoxDecoration(
@@ -298,7 +297,7 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                     height: 165,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        color: Color.fromARGB(255, 217, 125, 250)),
+                        color: const Color.fromARGB(255, 217, 125, 250)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -306,7 +305,7 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                           "images/6.png",
                           height: 80,
                         ),
-                        Text("English language",
+                        const Text("English language",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontFamily: "Urbanist-Medium",
@@ -323,7 +322,7 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Padding(
@@ -335,13 +334,13 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
               InkWell(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => Massge(
+                      builder: (context) => const Massge(
                           subject: "Human - computer interaction",
                           docid: "FpKXRN5jW1WT21NpPxEG",
                           course: "course1")));
                 },
                 child: Container(
-                  margin: EdgeInsets.only(top: 20),
+                  margin: const EdgeInsets.only(top: 20),
                   width: 155,
                   height: 180,
                   decoration: BoxDecoration(
@@ -353,7 +352,7 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                       height: 165,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Color.fromARGB(255, 166, 235, 210)),
+                          color: const Color.fromARGB(255, 166, 235, 210)),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -361,33 +360,30 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                             "images/computer.png",
                             height: 80,
                           ),
-                          FittedBox(
+                          const FittedBox(
                             child: Text("Computer Interaction",
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontFamily: "Urbanist-Medium",
                                     fontSize: 16)),
                           ),
-                          // Text("${num_massge[1]} messages",
+                          // Text("lecture,messages",
                           //     style: TextStyle(
-                          //         fontFamily: "Urbanist-Light",
-                          //         fontSize: 13))
+                          //         fontFamily: "Urbanist-Light", fontSize: 13))
                         ],
                       ),
                     ),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               InkWell(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => TableImage(
-                            path:
-                                "https://firebasestorage.googleapis.com/v0/b/stage4-32ee3.appspot.com/o/table%20course%201%2F335562.jpg?alt=media&token=7d726b76-5d96-46f0-ad05-84be1c895d88",
-                          )));
+                      builder: (context) => const TableImage(
+                            course: "course1",                          )));
                 },
                 child: Container(
                   width: 155,
@@ -401,18 +397,16 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                       height: 205,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Color(0xffc7e7ff)),
+                          color: const Color(0xffc7e7ff)),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Table of Course 1",
+                          const Text("Table of Course 1",
                               style: TextStyle(
                                   color: Colors.black,
                                   fontFamily: "Urbanist-Medium",
                                   fontSize: 16)),
-                          Text("1 Image",
-                              style: TextStyle(
-                                  fontFamily: "Urbanist-Light", fontSize: 13)),
+                          
                           Image.asset(
                             "images/table.jpg",
                             height: 120,
@@ -426,7 +420,7 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         )
       ],
