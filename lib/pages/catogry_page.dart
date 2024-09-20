@@ -89,9 +89,10 @@ class _CatogryPageState extends State<CatogryPage> {
                                             context: context,
                                             builder: (context) {
                                               return Container(
-                                                margin: const EdgeInsets.symmetric(
-                                                    horizontal: 35,
-                                                    vertical: 300),
+                                                margin:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 35,
+                                                        vertical: 300),
                                                 decoration: BoxDecoration(
                                                     color: Colors.white,
                                                     borderRadius:
@@ -205,16 +206,20 @@ class _CatogryPageState extends State<CatogryPage> {
                         const SizedBox(
                           height: 25,
                         ),
-                        const Text("Ready To Learn?",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 35)),
-                        Text("Choose your subject.",
-                            style: TextStyle(
-                                color: Colors.grey.shade400,
-                                fontFamily: "Urbanist-Regula",
-                                fontSize: 16))
+                        FittedBox(
+                          child: const Text("Ready To Learn?",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 25)),
+                        ),
+                        FittedBox(
+                          child: Text("Choose your subject.",
+                              style: TextStyle(
+                                  color: Colors.grey.shade400,
+                                  fontFamily: "Urbanist-Regula",
+                                  fontSize: 15)),
+                        )
                       ],
                     ),
                   ),
@@ -323,7 +328,7 @@ class _CatogryPageState extends State<CatogryPage> {
                                   )
                       ],
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 20),
                     course == 1
                         ? const SubjectCourse1()
                         : course == 2

@@ -90,14 +90,14 @@ class _ExmState extends State<Exm> {
                               Text(
                                 data[index]["name"],
                                 style: const TextStyle(
-                                    fontSize: 15, fontFamily: "Urbanist-Bold"),
+                                    fontSize: 13, fontFamily: "Urbanist-Bold"),
                                 textDirection: TextDirection.rtl,
                                 textAlign: TextAlign.right,
                               ),
                               Text(
                                 data[index]["title"],
                                 style: TextStyle(
-                                    fontSize: 12,
+                                    fontSize: 10,
                                     fontFamily: "Tajawal-Bold",
                                     color: Colors.grey.shade600),
                                 textDirection: TextDirection.rtl,
@@ -108,7 +108,7 @@ class _ExmState extends State<Exm> {
                               Text(
                                 "الموعد : ${data[index]["date"]}",
                                 style: TextStyle(
-                                    fontSize: 12,
+                                    fontSize: 10,
                                     fontFamily: "Tajawal-Bold",
                                     color: Colors.grey.shade600),
                                 textDirection: TextDirection.rtl,

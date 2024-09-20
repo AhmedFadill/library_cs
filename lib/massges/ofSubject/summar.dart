@@ -37,7 +37,8 @@ class _SummariesState extends State<Summaries> {
   @override
   Widget build(BuildContext context) {
     return isLoding == true
-        ? Center(child: Image.asset(
+        ? Center(
+            child: Image.asset(
             "images/system-regular-716-spinner-three-dots-hover-trapdoor (1).gif",
             height: 90,
           ))
@@ -65,7 +66,7 @@ class _SummariesState extends State<Summaries> {
                 itemCount: sub.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    height: 120,
+                    height: 130,
                     margin:
                         const EdgeInsets.symmetric(vertical: 8, horizontal: 5),
                     padding: const EdgeInsets.all(3),
@@ -115,7 +116,7 @@ class _SummariesState extends State<Summaries> {
                                 Text(
                                   sub[index]["title"],
                                   style: const TextStyle(
-                                      fontSize: 14, fontFamily: "Tajawal-Bold"),
+                                      fontSize: 12, fontFamily: "Tajawal-Bold"),
                                   textDirection: TextDirection.rtl,
                                   textAlign: TextAlign.right,
                                   softWrap: true,
@@ -125,16 +126,18 @@ class _SummariesState extends State<Summaries> {
                                 const SizedBox(
                                   height: 6,
                                 ),
-                                Text(
-                                  sub[index]["supTitle"],
-                                  textDirection: TextDirection.rtl,
-                                  textAlign: TextAlign.right,
-                                  maxLines: 3,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                      fontFamily: "Tajawal-Bold",
-                                      fontSize: 10,
-                                      color: Colors.grey.shade600),
+                                Expanded(
+                                  child: Text(
+                                    sub[index]["supTitle"],
+                                    textDirection: TextDirection.rtl,
+                                    textAlign: TextAlign.right,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                        fontFamily: "Tajawal-Bold",
+                                        fontSize: 10,
+                                        color: Colors.grey.shade600),
+                                  ),
                                 ),
                               ],
                             ),

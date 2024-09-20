@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:library_cs/intro.dart';
+import 'package:library_cs/main_screen.dart';
 import 'package:library_cs/open_screen.dart';
 import 'package:library_cs/pages/catogry_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:library_cs/splash_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -19,9 +22,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const PoenScreenApp(),
+      home: SplashScreen(),
       routes: {
         'CatogryPage': (context) => const CatogryPage(),
+        'Open': (context) => const MainScreen(),
+        'Intro': (context) => const Intro()
       },
     );
   }

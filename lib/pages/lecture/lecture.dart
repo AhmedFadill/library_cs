@@ -21,7 +21,7 @@ class _LectureState extends State<Lecture> {
     return Column(
       children: [
         const SizedBox(
-          height: 40,
+          height: 25,
         ),
         InkWell(
           onTap: () {
@@ -64,47 +64,19 @@ class _LectureState extends State<Lecture> {
                       const Text(
                         "Lectures",
                         style: TextStyle(
-                            fontFamily: "Urbanist-Bold", fontSize: 18),
+                            fontFamily: "Urbanist-Bold", fontSize: 16),
                       ),
                       const SizedBox(
                         height: 5,
                       ),
                       const Text(
                         "form here you can acsess to all lecture for this subject",
-                        maxLines: 2,
+                        maxLines: 3,
                         style: TextStyle(
-                            fontFamily: "Urbanist-Regula", fontSize: 13),
+                            fontFamily: "Urbanist-Regula",
+                            fontSize: 13,
+                            height: 1.2),
                       ),
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.only(top: 8),
-                              child: Text(
-                                "click here",
-                                style: TextStyle(
-                                  fontFamily: "Urbanist-Bold",
-                                  fontSize: 13,
-                                ),
-                              ),
-                            ),
-                            IconButton(
-                                onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => Layout(
-                                          subject: widget.subject,
-                                          type: "Lectures",
-                                          docid: widget.docid,
-                                          course: widget.course)));
-                                },
-                                icon: const Icon(
-                                  Icons.arrow_circle_right_outlined,
-                                ))
-                          ],
-                        ),
-                      )
                     ],
                   ),
                 )
@@ -156,45 +128,19 @@ class _LectureState extends State<Lecture> {
                       const Text(
                         "Exams",
                         style: TextStyle(
-                            fontFamily: "Urbanist-Bold", fontSize: 18),
+                            fontFamily: "Urbanist-Bold", fontSize: 16),
                       ),
                       const SizedBox(
                         height: 5,
                       ),
                       const Text(
                         "form here you can acsess to all Exams date for this subject",
-                        maxLines: 2,
+                        maxLines: 3,
                         style: TextStyle(
-                            fontFamily: "Urbanist-Regula", fontSize: 13),
+                            fontFamily: "Urbanist-Regula",
+                            fontSize: 13,
+                            height: 1.2),
                       ),
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.only(top: 8),
-                              child: Text(
-                                "click here",
-                                style: TextStyle(
-                                    fontFamily: "Urbanist-Bold", fontSize: 13),
-                              ),
-                            ),
-                            IconButton(
-                                onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => Layout(
-                                          subject: widget.subject,
-                                          type: "Exams",
-                                          docid: widget.docid,
-                                          course: widget.course)));
-                                },
-                                icon: const Icon(
-                                  Icons.arrow_circle_right_outlined,
-                                ))
-                          ],
-                        ),
-                      )
                     ],
                   ),
                 )
@@ -246,45 +192,19 @@ class _LectureState extends State<Lecture> {
                       const Text(
                         "Summaries",
                         style: TextStyle(
-                            fontFamily: "Urbanist-Bold", fontSize: 18),
+                            fontFamily: "Urbanist-Bold", fontSize: 16),
                       ),
                       const SizedBox(
                         height: 5,
                       ),
                       const Text(
                         "form here you can acsess to all summary for this subject",
-                        maxLines: 2,
+                        maxLines: 3,
                         style: TextStyle(
-                            fontFamily: "Urbanist-Regula", fontSize: 13),
+                            fontFamily: "Urbanist-Regula",
+                            fontSize: 13,
+                            height: 1.2),
                       ),
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.only(top: 8),
-                              child: Text(
-                                "click here",
-                                style: TextStyle(
-                                    fontFamily: "Urbanist-Bold", fontSize: 13),
-                              ),
-                            ),
-                            IconButton(
-                                onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => Layout(
-                                          subject: widget.subject,
-                                          type: "Summaries",
-                                          docid: widget.docid,
-                                          course: widget.course)));
-                                },
-                                icon: const Icon(
-                                  Icons.arrow_circle_right_outlined,
-                                ))
-                          ],
-                        ),
-                      )
                     ],
                   ),
                 )

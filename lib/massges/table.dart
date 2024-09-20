@@ -10,6 +10,15 @@ class TableImage extends StatefulWidget {
 }
 
 class _TableImageState extends State<TableImage> {
+  List<bool> study = [true, false];
+
+  void handleToggle(int index) {
+    setState(() {
+      study = [false, false];
+      study[index] = !study[index];
+    });
+  }
+
   List<QueryDocumentSnapshot> image = [];
   bool isLoding = true;
 
@@ -55,13 +64,13 @@ class _TableImageState extends State<TableImage> {
         appBar: AppBar(
           title: Text(
             "Table of ${widget.course}",
-            style: const TextStyle(fontFamily: "Urbanist-Bold"),
+            style: const TextStyle(fontFamily: "Urbanist-Bold", fontSize: 18),
           ),
         ),
         body: isLoding == true
             ? Center(
                 child: Image.asset(
-                "images/load.gif",
+                "images/system-regular-716-spinner-three-dots-hover-trapdoor (1).gif",
                 height: 90,
               ))
             : image.isEmpty
@@ -85,10 +94,37 @@ class _TableImageState extends State<TableImage> {
                     ),
                   )
                 : Center(
-                    child: Container(
-                    child: Image.network(
-                      image[0]["link1"],
+                    child: Column(children: [
+                    SizedBox(
+                      height: 20,
                     ),
-                  )));
+                    ToggleButtons(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          child: Text("صباحي"),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          child: Text("مسائي"),
+                        )
+                      ],
+                      selectedColor: Colors.black,
+                      fillColor: Colors.grey.shade300,
+                      onPressed: handleToggle,
+                      isSelected: study,
+                      textStyle:
+                          TextStyle(fontFamily: "Tajawal-Bold", fontSize: 14),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Container(
+                      child: Image.network(
+                        image[0][study[0] == true ? "link1" : "link2"],
+                      ),
+                    ),
+                  ])));
   }
 }

@@ -38,6 +38,9 @@ dependencies:
   cloud_firestore: ^5.3.0
   url_launcher: ^6.3.0
   firebase_storage: ^12.2.0
+  animated_text_kit: ^4.2.2
+  shared_preferences: ^2.3.2
+  introduction_screen: ^3.1.14
 
 dev_dependencies:
   flutter_test:

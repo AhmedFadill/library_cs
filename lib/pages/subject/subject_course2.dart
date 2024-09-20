@@ -42,11 +42,13 @@ class _SubjectCourse2State extends State<SubjectCourse2> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text("Oprating system 2",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 16)),
+                        FittedBox(
+                          child: const Text("Oprating system 2",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 16)),
+                        ),
                         Image.asset(
                           "images/1.png",
                           height: 120,
@@ -86,11 +88,13 @@ class _SubjectCourse2State extends State<SubjectCourse2> {
                           "images/2.png",
                           height: 80,
                         ),
-                        const Text("security 2",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 16)),
+                        FittedBox(
+                          child: const Text("security 2",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 16)),
+                        ),
                       ],
                     ),
                   ),
@@ -132,11 +136,13 @@ class _SubjectCourse2State extends State<SubjectCourse2> {
                           "images/3.png",
                           height: 80,
                         ),
-                        const Text("Computer Vision",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 16)),
+                        FittedBox(
+                          child: const Text("Computer Vision",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 16)),
+                        ),
                       ],
                     ),
                   ),
@@ -168,11 +174,13 @@ class _SubjectCourse2State extends State<SubjectCourse2> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text("Mobile Computing",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 16)),
+                        FittedBox(
+                          child: const Text("Mobile Computing",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 16)),
+                        ),
                         Image.asset(
                           "images/4.png",
                           height: 120,
@@ -213,11 +221,13 @@ class _SubjectCourse2State extends State<SubjectCourse2> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text("Cloud Computing",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 16)),
+                        FittedBox(
+                          child: const Text("Cloud Computing",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 16)),
+                        ),
                         Image.asset(
                           "images/5.png",
                           height: 120,
@@ -307,11 +317,13 @@ class _SubjectCourse2State extends State<SubjectCourse2> {
                           "images/table.jpg",
                           height: 80,
                         ),
-                        const Text("Table of Course 2",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 16)),
+                        FittedBox(
+                          child: const Text("Table of Course 2",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 16)),
+                        ),
                       ],
                     ),
                   ),

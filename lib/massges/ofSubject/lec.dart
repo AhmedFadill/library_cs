@@ -112,13 +112,15 @@ class _LecViewState extends State<LecView> {
                               Text(
                                 sub[index]["name"],
                                 style: const TextStyle(
-                                    fontFamily: "Urbanist-Bold", fontSize: 20),
+                                    fontFamily: "Urbanist-Bold", fontSize: 17),
                               ),
-                              Text(
-                                sub[index]["title"],
-                                style: const TextStyle(
-                                    fontFamily: "Urbanist-Medium",
-                                    fontSize: 15),
+                              Expanded(
+                                child: Text(
+                                  sub[index]["title"],
+                                  style: const TextStyle(
+                                      fontFamily: "Urbanist-Medium",
+                                      fontSize: 12),
+                                ),
                               ),
                             ],
                           ),
@@ -138,7 +140,8 @@ class _LecViewState extends State<LecView> {
                                 throw 'Could not launch ${Uri.parse(sub[index]["linkDrive"])}';
                               }
                             },
-                            icon: const Icon(Icons.download_for_offline_outlined)),
+                            icon: const Icon(
+                                Icons.download_for_offline_outlined)),
                       ],
                     ),
                   );

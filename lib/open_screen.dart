@@ -83,8 +83,7 @@ class PoenScreenApp extends StatelessWidget {
                                     TextSpan(text: " Our Skills")
                                   ]))),
                           const Padding(
-                            padding:
-                                EdgeInsets.symmetric(horizontal: 18.0),
+                            padding: EdgeInsets.symmetric(horizontal: 18.0),
                             child: Text(
                               "The program to organize and facilitate the research and study process",
                               style: TextStyle(fontFamily: "Urbanist-Light"),
@@ -94,6 +93,7 @@ class PoenScreenApp extends StatelessWidget {
                             height: 30,
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Expanded(
                                 flex: 2,
@@ -144,6 +144,7 @@ class PoenScreenApp extends StatelessWidget {
                               Expanded(
                                   flex: 3,
                                   child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       TextButton(
                                           onPressed: () {
@@ -159,7 +160,7 @@ class PoenScreenApp extends StatelessWidget {
                                                       Colors.white),
                                               padding: WidgetStatePropertyAll(
                                                   EdgeInsets.symmetric(
-                                                      horizontal: 50,
+                                                      horizontal: 40,
                                                       vertical: 18)),
                                               shape: WidgetStatePropertyAll(
                                                   RoundedRectangleBorder(
@@ -171,6 +172,9 @@ class PoenScreenApp extends StatelessWidget {
                                                 fontSize: 18,
                                                 fontFamily: "Urbanist-Medium"),
                                           )),
+                                      SizedBox(
+                                        width: 15,
+                                      )
                                     ],
                                   ))
                             ],

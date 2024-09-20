@@ -69,11 +69,13 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text("Oprating system 1",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 16)),
+                        FittedBox(
+                          child: const Text("Oprating system 1",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 16)),
+                        ),
                         // Text("${num_massge[0]} messages",
                         //     style: TextStyle(
                         //         fontFamily: "Urbanist-Light",
@@ -117,11 +119,13 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                           "images/2.png",
                           height: 80,
                         ),
-                        const Text("security 1",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 16)),
+                        FittedBox(
+                          child: const Text("security 1",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 16)),
+                        ),
                         // Text("${num_massge[7]} messages",
                         //     style: TextStyle(
                         //         fontFamily: "Urbanist-Light",
@@ -167,11 +171,13 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                           "images/3.png",
                           height: 80,
                         ),
-                        const Text("Information",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 16)),
+                        FittedBox(
+                          child: const Text("Information",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 16)),
+                        ),
                         // Text("${num_massge[2]} messages",
                         //     style: TextStyle(
                         //         fontFamily: "Urbanist-Light",
@@ -207,11 +213,13 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text("Network 1",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 16)),
+                        FittedBox(
+                          child: const Text("Network 1",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 16)),
+                        ),
                         // Text("${num_massge[4]} messages",
                         //     style: TextStyle(
                         //         fontFamily: "Urbanist-Light",
@@ -256,11 +264,13 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text("Image processing",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 16)),
+                        FittedBox(
+                          child: const Text("Image processing",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 16)),
+                        ),
                         // Text("${num_massge[5]} messages",
                         //     style: TextStyle(
                         //         fontFamily: "Urbanist-Light",
@@ -305,11 +315,13 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                           "images/6.png",
                           height: 80,
                         ),
-                        const Text("English language",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 16)),
+                        FittedBox(
+                          child: const Text("English language",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontFamily: "Urbanist-Medium",
+                                  fontSize: 16)),
+                        ),
                         // Text("${num_massge[6]} messages",
                         //     style: TextStyle(
                         //         fontFamily: "Urbanist-Light",
@@ -383,7 +395,8 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const TableImage(
-                            course: "course1",                          )));
+                            course: "course1",
+                          )));
                 },
                 child: Container(
                   width: 155,
@@ -401,12 +414,13 @@ class _SubjectCourse1State extends State<SubjectCourse1> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text("Table of Course 1",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontFamily: "Urbanist-Medium",
-                                  fontSize: 16)),
-                          
+                          FittedBox(
+                            child: const Text("Table of Course 1",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: "Urbanist-Medium",
+                                    fontSize: 16)),
+                          ),
                           Image.asset(
                             "images/table.jpg",
                             height: 120,

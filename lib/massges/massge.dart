@@ -117,7 +117,7 @@ class _MassgeState extends State<Massge> {
                                         Text(
                                           "Developer Accounts : ",
                                           style: TextStyle(
-                                              fontSize: 15,
+                                              fontSize: 13,
                                               decoration: TextDecoration.none,
                                               color: Colors.white,
                                               fontFamily: "Urbanist-Regula"),
@@ -159,7 +159,7 @@ class _MassgeState extends State<Massge> {
                                             Text(
                                               "Telegram Account .",
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 12,
                                                   decoration:
                                                       TextDecoration.none,
                                                   decorationStyle:
@@ -210,7 +210,7 @@ class _MassgeState extends State<Massge> {
                                             const Text(
                                               "Instagram Account .",
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 12,
                                                   decoration:
                                                       TextDecoration.none,
                                                   decorationStyle:
@@ -232,7 +232,7 @@ class _MassgeState extends State<Massge> {
                                     const Text(
                                       "Channel account : ",
                                       style: TextStyle(
-                                          fontSize: 15,
+                                          fontSize: 13,
                                           decoration: TextDecoration.none,
                                           color: Colors.white,
                                           fontFamily: "Urbanist-Regula"),
@@ -273,7 +273,7 @@ class _MassgeState extends State<Massge> {
                                             Text(
                                               "Stage 2 .",
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 12,
                                                   decoration:
                                                       TextDecoration.none,
                                                   decorationStyle:
@@ -324,7 +324,7 @@ class _MassgeState extends State<Massge> {
                                             Text(
                                               "Stage 3 .",
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 12,
                                                   decoration:
                                                       TextDecoration.none,
                                                   decorationStyle:
@@ -375,7 +375,7 @@ class _MassgeState extends State<Massge> {
                                             Text(
                                               "Stage 4 .",
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 12,
                                                   decoration:
                                                       TextDecoration.none,
                                                   decorationStyle:
@@ -457,7 +457,7 @@ class _MassgeState extends State<Massge> {
                                 Navigator.pop(context);
                               },
                               child: Text(
-                                'Course 1',
+                                widget.course,
                                 style: TextStyle(
                                     color: Colors.grey.shade200,
                                     fontFamily: "Urbanist-Regula",
@@ -468,14 +468,14 @@ class _MassgeState extends State<Massge> {
                           ],
                         ),
                         const SizedBox(
-                          height: 65,
+                          height: 60,
                         ),
                         FittedBox(
                           child: Text(widget.subject,
                               style: const TextStyle(
                                   color: Colors.white,
                                   fontFamily: "Urbanist-Medium",
-                                  fontSize: 32)),
+                                  fontSize: 28)),
                         ),
                       ],
                     ),
@@ -497,9 +497,10 @@ class _MassgeState extends State<Massge> {
                     children: [
                       Text(
                           "The lectures and summaries section contains links through which you can easily access the files.",
+                          maxLines: 3,
                           style: TextStyle(
                               fontFamily: "Urbanist-Regula",
-                              fontSize: 14,
+                              fontSize: 12,
                               color: Colors.grey.shade600)),
                       // Container(
                       //   decoration: BoxDecoration(
@@ -581,16 +582,17 @@ class _MassgeState extends State<Massge> {
                       //   ),
                       // )
                       Expanded(
-                          child: Lecture(
-                        subject: widget.subject,
-                        course: widget.course,
-                        docid: widget.docid,
-                      )
-                          //     M(
-                          //   course: widget.course,
-                          //   docid: widget.docid,
-                          // )
-                          ),
+                        child: Lecture(
+                          subject: widget.subject,
+                          course: widget.course,
+                          docid: widget.docid,
+                        ),
+
+                        //     M(
+                        //   course: widget.course,
+                        //   docid: widget.docid,
+                        // )
+                      ),
                     ],
                   ),
                 ),

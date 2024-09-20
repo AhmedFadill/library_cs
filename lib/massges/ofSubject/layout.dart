@@ -122,7 +122,7 @@ class _LayoutState extends State<Layout> {
                                         Text(
                                           "Developer Accounts : ",
                                           style: TextStyle(
-                                              fontSize: 15,
+                                              fontSize: 13,
                                               decoration: TextDecoration.none,
                                               color: Colors.white,
                                               fontFamily: "Urbanist-Regula"),
@@ -164,7 +164,7 @@ class _LayoutState extends State<Layout> {
                                             Text(
                                               "Telegram Account .",
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 12,
                                                   decoration:
                                                       TextDecoration.none,
                                                   decorationStyle:
@@ -215,7 +215,7 @@ class _LayoutState extends State<Layout> {
                                             const Text(
                                               "Instagram Account .",
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 12,
                                                   decoration:
                                                       TextDecoration.none,
                                                   decorationStyle:
@@ -237,7 +237,7 @@ class _LayoutState extends State<Layout> {
                                     const Text(
                                       "Channel account : ",
                                       style: TextStyle(
-                                          fontSize: 15,
+                                          fontSize: 13,
                                           decoration: TextDecoration.none,
                                           color: Colors.white,
                                           fontFamily: "Urbanist-Regula"),
@@ -278,7 +278,7 @@ class _LayoutState extends State<Layout> {
                                             Text(
                                               "Stage 2 .",
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 12,
                                                   decoration:
                                                       TextDecoration.none,
                                                   decorationStyle:
@@ -329,7 +329,7 @@ class _LayoutState extends State<Layout> {
                                             Text(
                                               "Stage 3 .",
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 12,
                                                   decoration:
                                                       TextDecoration.none,
                                                   decorationStyle:
@@ -380,7 +380,7 @@ class _LayoutState extends State<Layout> {
                                             Text(
                                               "Stage 4 .",
                                               style: TextStyle(
-                                                  fontSize: 15,
+                                                  fontSize: 12,
                                                   decoration:
                                                       TextDecoration.none,
                                                   decorationStyle:
@@ -442,51 +442,62 @@ class _LayoutState extends State<Layout> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                              child: const Icon(
-                                Icons.arrow_back_ios_rounded,
-                                color: Colors.white,
-                                size: 18,
+                        Expanded(
+                          child: Row(
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Icon(
+                                  Icons.arrow_back_ios_rounded,
+                                  color: Colors.white,
+                                  size: 18,
+                                ),
                               ),
-                            ),
-                            const SizedBox(
-                              width: 17,
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                              child: Text(
-                                'Course 1',
-                                style: TextStyle(
-                                    color: Colors.grey.shade200,
-                                    fontFamily: "Urbanist-Regula",
-                                    fontSize: 15,
-                                    letterSpacing: 2),
+                              const SizedBox(
+                                width: 17,
                               ),
-                            ),
-                          ],
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text(
+                                  widget.course,
+                                  style: TextStyle(
+                                      color: Colors.grey.shade200,
+                                      fontFamily: "Urbanist-Regula",
+                                      fontSize: 15,
+                                      letterSpacing: 2),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         const SizedBox(
-                          height: 45,
+                          height: 40,
                         ),
-                        FittedBox(
-                          child: Text(widget.subject,
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontFamily: "Urbanist-Medium",
-                                  fontSize: 32)),
-                        ),
-                        Text(widget.type,
-                            style: const TextStyle(
-                                color: Colors.white,
-                                fontFamily: "Urbanist-Medium",
-                                fontSize: 18)),
+                        Expanded(
+                          flex: 3,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              FittedBox(
+                                child: Text(widget.subject,
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: "Urbanist-Medium",
+                                        fontSize: 25)),
+                              ),
+                              Text(widget.type,
+                                  style: const TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: "Urbanist-Medium",
+                                      fontSize: 15)),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ),
